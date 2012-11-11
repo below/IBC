@@ -14,12 +14,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(User)
 @synthesize loggedIn, username, password, friends, receivedData, isLoadingFriends;
 
 - (void)parse {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     XMLRPCResponseParser *parser = [[XMLRPCResponseParser alloc] initWithData:self.receivedData delegate:self];
     [parser parse];
-    [parser release];
+    [parser autorelease];
     self.receivedData = nil;
-    [pool release];
+    
 }
 
 - (void)deleteKeychainItem {
