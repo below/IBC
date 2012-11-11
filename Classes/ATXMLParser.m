@@ -115,7 +115,7 @@
 - (void)parseInBackgroundWithDelegate:(id <ATXMLParserDelegateProtocol>)object
 {
     BOOL               result;
-    @autoreleasepool {
+    
 
         [self setDelegate:object];
 
@@ -124,7 +124,7 @@
             [delegate parser:self didFinishedSuccessfull:result];
 
     }
-}
+
 
 
 #pragma mark -

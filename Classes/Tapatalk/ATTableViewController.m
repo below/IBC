@@ -85,12 +85,12 @@
 }
 
 - (void)parse {
-    @autoreleasepool {
+    __strong 
         XMLRPCResponseParser *parser = [[XMLRPCResponseParser alloc] initWithData:self.receivedData delegate:self];
         [parser parse];
         self.receivedData = nil;
     }
-}
+
 
 - (void)sendRequestWithXMLString:(NSString *)xmlString cookies:(BOOL)cookies delegate:(id)delegate {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
