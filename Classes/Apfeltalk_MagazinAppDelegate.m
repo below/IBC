@@ -152,8 +152,6 @@
         
         splitviewController.viewControllers = [NSArray arrayWithObjects:newsController, detailNews,nil];
         [viewControllers replaceObjectAtIndex:0 withObject:splitviewController];
-        [splitviewController release];
-        [detailNews release];
         
 
         
@@ -192,10 +190,5 @@
  */
 
 
-- (void)dealloc {
-    [tabBarController release];
-    [window release];
-    [super dealloc];
-}
 
 @end

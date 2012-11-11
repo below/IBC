@@ -34,7 +34,7 @@
 }
 
 @property (readwrite) BOOL showSave;
-@property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, assign) NSInteger currentPage;
 
 - (IBAction)changePage:(UIPageControl *)sender;

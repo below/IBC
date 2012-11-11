@@ -64,11 +64,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-    self.pageControl = nil;
-    [super dealloc];
-}
 
 - (NSInteger)showSaveButton {
     UINavigationController *navController;
@@ -96,7 +91,6 @@
 
 - (void) status_updateCallback: (NSData *) content {
 	[loadingActionSheet dismissWithClickedButtonIndex:0 animated:YES];
-	[loadingActionSheet release];
 }
 
 -(IBAction)speichern:(id)sender
@@ -156,7 +150,6 @@
         }
 		// Mail
         SHKItem *item = [SHKItem text:storyContent];
-        [storyContent release];
         item.title = story.title;
         
         [SHKMail shareItem:item];
@@ -171,7 +164,6 @@
                 [controller setInitialText:story.title];
                 [controller addURL:[NSURL URLWithString:story.link]];
                 [self presentModalViewController:controller animated:YES];
-                [controller release];
             }
         } else {
             NSURL *url = [NSURL URLWithString:story.link];
@@ -190,7 +182,6 @@
 	}*/
 	
 	if (actionSheet == myMenu) {
-		[myMenu release];		
 		myMenu = nil;
 	}
 }
@@ -220,7 +211,7 @@
     if (theStory && !theStory.author)     // Check if the author and content is already loaded
     {
         if (!self.activityIndicator)
-            self.activityIndicator = [[[ATActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0, 0.0, 70.0, 70.0)] autorelease];
+            self.activityIndicator = [[ATActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0, 0.0, 70.0, 70.0)];
 
         self.activityIndicator.center = CGPointMake(webview.frame.size.width / 2.0, webview.frame.size.height / 2.0);
 
@@ -242,17 +233,15 @@
     leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     
     [webview addGestureRecognizer:leftSwipeGestureRecognizer];
-    [leftSwipeGestureRecognizer release];
     
     UISwipeGestureRecognizer *rightSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
     rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     
     [webview addGestureRecognizer:rightSwipeGestureRecognizer];
-    [rightSwipeGestureRecognizer release];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
         NSArray            *imgArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"Up.png"], [UIImage imageNamed:@"Down.png"], nil];
-        UISegmentedControl *segControl = [[[UISegmentedControl alloc] initWithItems:imgArray] autorelease];
+        UISegmentedControl *segControl = [[UISegmentedControl alloc] initWithItems:imgArray];
         
         [segControl addTarget:[[[self navigationController] viewControllers] objectAtIndex:0] action:@selector(changeStory:)
              forControlEvents:UIControlEventValueChanged];
@@ -330,7 +319,7 @@
 - (NSString *)htmlString
 {
     Story           *theStory = self.story;
-    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setDateFormat:[NSString stringWithFormat:@"%@ HH:mm", [dateFormatter dateFormat]]];
@@ -345,18 +334,17 @@
 
 - (void)loadArticlePages:(NSArray *)pagesLinks
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
 
-    for (NSUInteger index = 1; index < [pagesLinks count]; index++)
-    {
-        ATMXMLUtilities *xmlUtilities = [[ATMXMLUtilities alloc] initWithURLString:[pagesLinks objectAtIndex:index]];
-        [self.story addStoryPage:[xmlUtilities articleContent]];
-        [xmlUtilities release];
+        for (NSUInteger index = 1; index < [pagesLinks count]; index++)
+        {
+            ATMXMLUtilities *xmlUtilities = [[ATMXMLUtilities alloc] initWithURLString:[pagesLinks objectAtIndex:index]];
+            [self.story addStoryPage:[xmlUtilities articleContent]];
+        }
+
+        [self performSelectorOnMainThread:@selector(stopNetworkActivityIndicator) withObject:nil waitUntilDone:NO];
+
     }
-
-    [self performSelectorOnMainThread:@selector(stopNetworkActivityIndicator) withObject:nil waitUntilDone:NO];
-
-    [pool release];
 }
 
 
