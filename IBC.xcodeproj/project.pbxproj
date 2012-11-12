@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0844CD8C16307685005F5866 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0844CD8B16307685005F5866 /* Default-568h@2x.png */; };
 		1D3623260D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m */; settings = {COMPILER_FLAGS = ""; }; };
-		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {COMPILER_FLAGS = ""; }; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		22090EBE104FAC4700A20868 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22090EBD104FAC4700A20868 /* AsyncImageView.m */; settings = {COMPILER_FLAGS = ""; }; };
@@ -89,7 +89,7 @@
 		5AF5E28613FAEE70009A5E8C /* privat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF5E28413FAEE70009A5E8C /* privat@2x.png */; };
 		5AFB72DC1348A0270027752A /* thread_dot_hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFB72DA1348A0270027752A /* thread_dot_hot.png */; };
 		5AFB72DD1348A0270027752A /* thread_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFB72DB1348A0270027752A /* thread_dot.png */; };
-		5E12A3AB13E2B54300B74F34 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12A3AA13E2B54300B74F34 /* SearchTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5E12A3AB13E2B54300B74F34 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E12A3AA13E2B54300B74F34 /* SearchTableViewController.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E1379A113928FD40065941B /* DetailTop~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E1379A013928FD40065941B /* DetailTop~ipad.png */; };
 		5E14F849139A38E100E64323 /* DetailView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E14F848139A38E100E64323 /* DetailView~ipad.xib */; };
 		5E1DC1F0137C59D100BE82AC /* ContentTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1DC1EF137C59D100BE82AC /* ContentTranslator.m */; settings = {COMPILER_FLAGS = ""; }; };

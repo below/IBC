@@ -57,14 +57,17 @@
             ReferencedContainer = "container:IBC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "NSZombieEnabled"
+      <AdditionalOptions>
+         <AdditionalOption
+            key = "NSDOLoggingEnabled"
             value = "YES"
             isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
-      <AdditionalOptions>
+         </AdditionalOption>
+         <AdditionalOption
+            key = "MallocStackLogging"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
          <AdditionalOption
             key = "NSZombieEnabled"
             value = "YES"
