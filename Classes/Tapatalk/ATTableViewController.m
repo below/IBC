@@ -85,10 +85,10 @@
 }
 
 - (void)parse {
-    __strong 
+    @autoreleasepool {
         XMLRPCResponseParser *parser = [[XMLRPCResponseParser alloc] initWithData:self.receivedData delegate:self];
         [parser parse];
-        self.receivedData = nil;
+        self.receivedData = nil;}
     }
 
 
