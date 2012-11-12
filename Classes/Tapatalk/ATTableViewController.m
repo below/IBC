@@ -236,13 +236,16 @@
     [self.receivedData appendData:data];
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    unsigned long length = [self.receivedData length];
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    const unsigned long length = [self.receivedData length];
     NSLog(@"Received length: %lu", length);
-    if ([self.receivedData length] != 0) {
-        NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(parse) object:nil];
-        [thread start];
-    } else {
+    if ( length )
+    {
+        [self parse];
+    }
+    else
+    {
         [self.tableView reloadData];
     }
 }
