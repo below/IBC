@@ -52,7 +52,7 @@
 }
 
 - (void)loadMessages {
-    NSString *xmlString = [NSString stringWithFormat:@"<?xml version=\"1.0\"?><methodCall><methodName>get_box</methodName><params><param><value><string>%ld</string></value></param></params></methodCall>", self.box.boxID ];
+    NSString *xmlString = [NSString stringWithFormat:@"<?xml version=\"1.0\"?><methodCall><methodName>get_box</methodName><params><param><value><string>%ld</string></value></param></params></methodCall>", (long)self.box.boxID ];
     [self sendRequestWithXMLString:xmlString cookies:YES delegate:self];
 }
 
@@ -272,7 +272,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         ATMessage *message = [self.messages objectAtIndex:indexPath.row];
-        NSString *xmlString = [NSString stringWithFormat:@"<?xml version=\"1.0\"?><methodCall><methodName>delete_message</methodName><params><param><value><string>%ld</string></value></param><param><value><string>%ld</string></value></param></params></methodCall>", message.messageID, self.box.boxID];
+        NSString *xmlString = [NSString stringWithFormat:@"<?xml version=\"1.0\"?><methodCall><methodName>delete_message</methodName><params><param><value><string>%ld</string></value></param><param><value><string>%ld</string></value></param></params></methodCall>", (long)message.messageID, (long)self.box.boxID];
         
         self.isDeletingMessage = YES;
         [[SHKActivityIndicator currentIndicator] displayActivity:ATLocalizedString(@"Deleting message", nil)];

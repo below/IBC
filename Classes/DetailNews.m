@@ -32,6 +32,9 @@
 #import "SHKFBStreamDialog.h"
 #import "SHKMail.h"
 
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+#import <Twitter/Twitter.h>
 
 // Private interface
 @interface DetailNews ()
@@ -98,7 +101,7 @@
     [super speichern:sender];
 	Apfeltalk_MagazinAppDelegate *appDelegate = [Apfeltalk_MagazinAppDelegate sharedAppDelegate];
 	// :below:20090920 This is only to placate the analyzer
-        
+    
     myMenu = [[UIActionSheet alloc] init];
     myMenu.title = nil;
     myMenu.delegate = self;
@@ -106,7 +109,7 @@
     if ([self showSaveButton]) // :below:20100101 This is something of a hack
         [myMenu addButtonWithTitle:[self Mailsendecode]];
     [myMenu addButtonWithTitle:@"Twitter"];
-    //[myMenu addButtonWithTitle:@"Facebook"];
+    [myMenu addButtonWithTitle:@"Facebook"];
     NSInteger lastButtonIndex = [myMenu addButtonWithTitle:NSLocalizedStringFromTable(@"Cancel", @"ATLocalizable", @"")];
     
     myMenu.cancelButtonIndex = lastButtonIndex;
@@ -157,29 +160,49 @@
 	
 	if (buttonIdx == 1 + saveEnabled) {
 		// Twitter
-        Class tweetControllerClase = NSClassFromString(@"TWTweetComposeViewController");
-        if (tweetControllerClase) {
-            if ([TWTweetComposeViewController canSendTweet]) {
-                TWTweetComposeViewController *controller = [[TWTweetComposeViewController alloc] init];
-                [controller setInitialText:story.title];
-                [controller addURL:[NSURL URLWithString:story.link]];
-                [self presentModalViewController:controller animated:YES];
-            }
+        if(NSClassFromString(@"SLComposeViewController") != nil)
+        {
+            if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]);
+            mySLComposerSheet = [[SLComposeViewController alloc] init]; //initiate the Social Controller
+            mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter]; //Tell him with what social plattform to use it, e.g. facebook or twitter
+            [mySLComposerSheet setInitialText:[NSString stringWithFormat:story.title,mySLComposerSheet.serviceType]]; //the message you want to post
+            [mySLComposerSheet addURL:[NSURL URLWithString:story.link]];
+            //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
+            [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+            
         } else {
-            NSURL *url = [NSURL URLWithString:story.link];
-            SHKItem *item = [SHKItem URL:url title:story.title];
-        
-            [SHKTwitter shareItem:item];
+            
+            if ([TWTweetComposeViewController canSendTweet])
+            {
+                TWTweetComposeViewController *tweetSheet =
+                [[TWTweetComposeViewController alloc] init];
+                [tweetSheet setInitialText:[NSString stringWithFormat:@"story title"]];
+                [tweetSheet addURL:[NSURL URLWithString:story.link]];
+                [self presentModalViewController:tweetSheet animated:YES];
+            }
         }
 	}
 	
-	/*if (buttonIdx == 2 + saveEnabled) {
+	if (buttonIdx == 2 + saveEnabled) {
         // FaceBook
-        NSURL *url = [NSURL URLWithString:story.link];
-        SHKItem *item = [SHKItem URL:url title:story.title];
+        if(NSClassFromString(@"SLComposeViewController") != nil)
+        {
+            if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]);
+            mySLComposerSheet = [[SLComposeViewController alloc] init]; //initiate the Social Controller
+            mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook]; //Tell him with what social plattform to use it, e.g. facebook or twitter
+            [mySLComposerSheet setInitialText:[NSString stringWithFormat:story.title,mySLComposerSheet.serviceType]]; //the message you want to post
+            [mySLComposerSheet addURL:[NSURL URLWithString:story.link]];
+            //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
+            [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+        }
         
-        [SHKFacebook shareItem:item];
-	}*/
+        //NSURL *url = [NSURL URLWithString:story.link];
+        //SHKItem *item = [SHKItem URL:url title:story.title];
+        
+        //[SHKFacebook shareItem:item];
+	}
+    
+    
 	
 	if (actionSheet == myMenu) {
 		myMenu = nil;

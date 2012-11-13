@@ -120,7 +120,7 @@
 }
 
 - (NSString *) storyTitle {
-	if ([[self story] title] == @"")
+	if ([[[self story] title] isEqual: @""])
 		return NSLocalizedString (@"--Kein Titel--", @"");
 	else
 		return [[self story] title];

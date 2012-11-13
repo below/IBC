@@ -6,6 +6,8 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 #import "ATTextView.h"
 
 

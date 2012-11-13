@@ -26,6 +26,8 @@
 #import <MessageUI/MessageUI.h>
 #import <Twitter/Twitter.h>
 
+SLComposeViewController *mySLComposerSheet;
+
 @interface DetailNews : DetailViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate> {
 	BOOL showSave;
 	UIActionSheet *loadingActionSheet;

@@ -166,6 +166,13 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [self deleteCookies];
     [self login];
+    
+    //Clear the notificication center, when the app enters foreground from background
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

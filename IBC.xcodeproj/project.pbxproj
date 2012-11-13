@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081C73F11652D3FA00B9B670 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081C73F01652D3FA00B9B670 /* Accounts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		081C73F31652D40500B9B670 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081C73F21652D40400B9B670 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0844CD8C16307685005F5866 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0844CD8B16307685005F5866 /* Default-568h@2x.png */; };
 		1D3623260D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m */; settings = {COMPILER_FLAGS = ""; }; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {COMPILER_FLAGS = ""; }; };
@@ -213,7 +215,7 @@
 		5ED68E98136F379600AB9E4F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED68E99136F379600AB9E4F /* MainWindow.xib */; };
 		5ED68E9A136F37A500AB9E4F /* ForumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED68E9B136F37A500AB9E4F /* ForumViewController.xib */; };
 		5ED68E9C136F37B100AB9E4F /* SubForumController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED68E9D136F37B100AB9E4F /* SubForumController.xib */; };
-		5ED94648144753DD0061EA6C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED94647144753DD0061EA6C /* Twitter.framework */; };
+		5ED94648144753DD0061EA6C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED94647144753DD0061EA6C /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CB15C87B10498EBF00360BDC /* NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB15C87A10498EBF00360BDC /* NewsController.m */; settings = {COMPILER_FLAGS = ""; }; };
 		CB15C89C1049950900360BDC /* DetailNews.m in Sources */ = {isa = PBXBuildFile; fileRef = CB15C89B1049950900360BDC /* DetailNews.m */; settings = {COMPILER_FLAGS = ""; }; };
 		CB15C8CE1049A0CF00360BDC /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = CB15C8CD1049A0CF00360BDC /* Story.m */; settings = {COMPILER_FLAGS = ""; }; };
@@ -229,14 +231,12 @@
 		F634305510362AA4004ACF93 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F634304C10362AA4004ACF93 /* DetailViewController.m */; settings = {COMPILER_FLAGS = ""; }; };
 		F634306510362AC6004ACF93 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F634306010362AC6004ACF93 /* Default.png */; };
 		F634306610362AC6004ACF93 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F634306110362AC6004ACF93 /* icon.png */; };
-		F634308510362E27004ACF93 /* GalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = F634308410362E27004ACF93 /* GalleryController.m */; settings = {COMPILER_FLAGS = ""; }; };
 		F6658266104FC21300BF91E9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6658265104FC21300BF91E9 /* RootViewController.m */; settings = {COMPILER_FLAGS = ""; }; };
 		F6730BA213490EE70045B876 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = F6730BA113490EE70045B876 /* default.css */; };
 		F6730BBA134A67040045B876 /* AsyncImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F6730BB9134A67040045B876 /* AsyncImageButton.m */; settings = {COMPILER_FLAGS = ""; }; };
 		F6730BE4134A70B40045B876 /* GCImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6730BE2134A70B40045B876 /* GCImageViewer.m */; settings = {COMPILER_FLAGS = ""; }; };
 		F6730BE5134A70B40045B876 /* GCImageViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6730BE3134A70B40045B876 /* GCImageViewer.xib */; };
 		F6730BE8134A70F50045B876 /* TDHUDProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F6730BE7134A70F40045B876 /* TDHUDProgressBar.m */; settings = {COMPILER_FLAGS = ""; }; };
-		F6B4FC73103697960080D615 /* DetailGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B4FC72103697960080D615 /* DetailGallery.m */; settings = {COMPILER_FLAGS = ""; }; };
 		F6DC30C11039781600A734AF /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DC30BF1039781600A734AF /* gallery.png */; };
 		F6DC30C21039781600A734AF /* magazin.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DC30C01039781600A734AF /* magazin.png */; };
 		F6FB7DD6104EDE2F007F5A54 /* Fullscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FB7DD4104EDE2F007F5A54 /* Fullscreen.m */; settings = {COMPILER_FLAGS = ""; }; };
@@ -394,6 +394,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081C73F01652D3FA00B9B670 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		081C73F21652D40400B9B670 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0828FA6B1637FFC1006A97D7 /* Glass.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glass.caf; sourceTree = "<group>"; };
 		0844CD8B16307685005F5866 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -763,6 +765,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED94648144753DD0061EA6C /* Twitter.framework in Frameworks */,
+				081C73F31652D40500B9B670 /* Social.framework in Frameworks */,
+				081C73F11652D3FA00B9B670 /* Accounts.framework in Frameworks */,
 				3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */,
 				320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */,
 				320A737074758E53BA54BE95 /* libThree20UINavigator.a in Frameworks */,
@@ -911,6 +915,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				081C73F21652D40400B9B670 /* Social.framework */,
+				081C73F01652D3FA00B9B670 /* Accounts.framework */,
 				3201088596B4756681693700 /* Three20UICommon.xcodeproj */,
 				320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */,
 				320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */,
@@ -1873,8 +1879,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m in Sources */,
 				F634305510362AA4004ACF93 /* DetailViewController.m in Sources */,
-				F634308510362E27004ACF93 /* GalleryController.m in Sources */,
-				F6B4FC73103697960080D615 /* DetailGallery.m in Sources */,
 				CB15C87B10498EBF00360BDC /* NewsController.m in Sources */,
 				CB15C89C1049950900360BDC /* DetailNews.m in Sources */,
 				CB15C8CE1049A0CF00360BDC /* Story.m in Sources */,
