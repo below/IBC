@@ -161,6 +161,8 @@
 		// Mail
         SHKItem *item = [SHKItem text:storyContent];
         item.title = story.title;
+        item.text = @"Hier ist ein Link der dich interessieren könnte:";
+        item.URL = [NSURL URLWithString:story.link];
         
         [SHKMail shareItem:item];
 	}
@@ -169,7 +171,7 @@
 		// Twitter
         if(NSClassFromString(@"SLComposeViewController") != nil)
         {
-            if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]);
+            
             mySLComposerSheet = [[SLComposeViewController alloc] init]; //initiate the Social Controller
             mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter]; //Tell him with what social plattform to use it, e.g. facebook or twitter
             [mySLComposerSheet setInitialText:[NSString stringWithFormat:story.title,mySLComposerSheet.serviceType]]; //the message you want to post
@@ -179,11 +181,10 @@
             
         } else {
             
-            if ([TWTweetComposeViewController canSendTweet])
             {
                 TWTweetComposeViewController *tweetSheet =
                 [[TWTweetComposeViewController alloc] init];
-                [tweetSheet setInitialText:[NSString stringWithFormat:@"story title"]];
+                [tweetSheet setInitialText:[NSString stringWithFormat:story.title]];
                 [tweetSheet addURL:[NSURL URLWithString:story.link]];
                 [self presentModalViewController:tweetSheet animated:YES];
             }

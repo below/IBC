@@ -42,6 +42,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     NSLog(@"Eine Nachricht ist angekommen, während die App aktiv ist");
+    NSLog(@"userInfo: %@",userInfo);
     
     NSString* alert = [[userInfo objectForKey:@"aps"] objectForKey:@"id"];
 
@@ -60,12 +61,23 @@
         [theString appendFormat:@"%2.2x", theBytes[i]];
     }
     
-    NSString* url = [NSString stringWithFormat:@"http://byte-welt.net:8080/PushServer/client/register?devicetype=4&appkey=23e409isaeroakse23sae0&deviceid=%@&devicekey=%@",theString,theString];
+    NSString *url = nil;
+    if ([[UIApplication sharedApplication] enabledRemoteNotificationTypes] > 0) {
+           url = [NSString stringWithFormat:@"http://byte-welt.net:8080/PushServer/client/register?devicetype=4&appkey=23e409isaeroakse23sae0&deviceid=%@&devicekey=%@",theString,theString];
+        NSLog(@"push enabled");
+    }
+    else {
+        url = [NSString stringWithFormat:@"http://byte-welt.net:8080/PushServer/client/unregister?devicetype=4&appkey=23e409isaeroakse23sae0&deviceid=%@&devicekey=%@",theString,theString];
+         NSLog(@"push disabled");
+    }
+ 
     NSLog(@"APNS URL : %@",url);
     
     NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)urlResponse;
+        NSLog(@"StatusCode: %d",httpResponse.statusCode);
         if (error) {
             NSLog(@"Error: %@", error);
         }
@@ -123,15 +135,12 @@
  }*/
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     self.window.frame = [[UIScreen mainScreen] bounds];
     [self setApplicationDefaults];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 	[self.window makeKeyAndVisible];
     
-    //This is the start of the general push notification settings
-	// Let the device know we want to receive push notifications
-	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     //Clear the notification center when the app has been launched
     
@@ -166,6 +175,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [self deleteCookies];
     [self login];
+    
+    //This is the start of the general push notification settings
+	// Let the device know we want to receive push notifications
+    NSLog(@"notificationtypes: %d",[[UIApplication sharedApplication] enabledRemoteNotificationTypes]);
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     //Clear the notificication center, when the app enters foreground from background
     
