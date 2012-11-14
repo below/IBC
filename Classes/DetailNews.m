@@ -202,15 +202,6 @@
             //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
             [self presentViewController:mySLComposerSheet animated:YES completion:nil];
         }
-
-        } else {
-        
-        if (buttonIdx == 2 + saveEnabled) {
-         // FaceBook for iOS 5
-         NSURL *url = [NSURL URLWithString:story.link];
-         SHKItem *item = [SHKItem URL:url title:story.title];
-         [SHKFacebook shareItem:item];
-         }
 	}
     
 
