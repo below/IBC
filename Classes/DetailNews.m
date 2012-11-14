@@ -109,7 +109,11 @@
     if ([self showSaveButton]) // :below:20100101 This is something of a hack
         [myMenu addButtonWithTitle:[self Mailsendecode]];
     [myMenu addButtonWithTitle:@"Twitter"];
-    [myMenu addButtonWithTitle:@"Facebook"];
+    // Check if the new SLComposerViewController is available, then hide the facebook button in the options for news if it is not available
+    Class composeViewControllerClass = NSClassFromString(@"SLComposeViewController");
+    if (composeViewControllerClass != nil)
+        [myMenu addButtonWithTitle:@"Facebook"];
+
 
     
     
@@ -198,7 +202,15 @@
             //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
             [self presentViewController:mySLComposerSheet animated:YES completion:nil];
         }
+
+        } else {
         
+        if (buttonIdx == 2 + saveEnabled) {
+         // FaceBook for iOS 5
+         NSURL *url = [NSURL URLWithString:story.link];
+         SHKItem *item = [SHKItem URL:url title:story.title];
+         [SHKFacebook shareItem:item];
+         }
 	}
     
 
