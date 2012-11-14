@@ -110,6 +110,9 @@
         [myMenu addButtonWithTitle:[self Mailsendecode]];
     [myMenu addButtonWithTitle:@"Twitter"];
     [myMenu addButtonWithTitle:@"Facebook"];
+
+    
+    
     NSInteger lastButtonIndex = [myMenu addButtonWithTitle:NSLocalizedStringFromTable(@"Cancel", @"ATLocalizable", @"")];
     
     myMenu.cancelButtonIndex = lastButtonIndex;
@@ -196,14 +199,9 @@
             [self presentViewController:mySLComposerSheet animated:YES completion:nil];
         }
         
-        //NSURL *url = [NSURL URLWithString:story.link];
-        //SHKItem *item = [SHKItem URL:url title:story.title];
-        
-        //[SHKFacebook shareItem:item];
 	}
     
-    
-	
+
 	if (actionSheet == myMenu) {
 		myMenu = nil;
 	}
