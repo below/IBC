@@ -166,9 +166,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(User)
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(parse:) object:[NSData dataWithData:self.receivedData]];
-    [thread start];
-    [thread retain];
+    [self performSelectorInBackground:@selector(parse:) withObject:[NSData dataWithData:self.receivedData]];
+    //NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(parse:) object:[NSData dataWithData:self.receivedData]];
+    //[thread start];
+    //[thread retain];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
