@@ -142,6 +142,9 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 	[self.window makeKeyAndVisible];
     
+    NSLog(@"notificationtypes: %d",[[UIApplication sharedApplication] enabledRemoteNotificationTypes]);
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
     
     //Clear the notification center when the app has been launched
     
@@ -176,11 +179,6 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [self deleteCookies];
     [self login];
-    
-    //This is the start of the general push notification settings
-	// Let the device know we want to receive push notifications
-    NSLog(@"notificationtypes: %d",[[UIApplication sharedApplication] enabledRemoteNotificationTypes]);
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     //Clear the notificication center, when the app enters foreground from background
     

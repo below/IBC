@@ -35,9 +35,6 @@
 		4C0E121A140A8E2A00C4DCB4 /* HTMLEntities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E1219140A8E2A00C4DCB4 /* HTMLEntities.plist */; };
 		4C42FF4F10533731002CC1E8 /* ATXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C42FF4E10533731002CC1E8 /* ATXMLParser.m */; settings = {COMPILER_FLAGS = ""; }; };
 		4C64415F106548620007715D /* TickerThumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C64415E106548620007715D /* TickerThumbnail.png */; };
-		4C6788341052C74E00635F55 /* LivetickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6788331052C74E00635F55 /* LivetickerController.m */; settings = {COMPILER_FLAGS = ""; }; };
-		4C93ABBB105470020070A190 /* DetailLiveticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C93ABBA105470020070A190 /* DetailLiveticker.m */; settings = {COMPILER_FLAGS = ""; }; };
-		4CC030DE1055D4340039DAB5 /* LivetickerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC030DD1055D4340039DAB5 /* LivetickerNavigationController.m */; settings = {COMPILER_FLAGS = ""; }; };
 		4CD36BE31058344700DD09FB /* Down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD36BE21058344700DD09FB /* Down.png */; };
 		4CD36BE71058345800DD09FB /* Up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD36BE61058345800DD09FB /* Up.png */; };
 		4CDD01A213C644A800E0DCAD /* ATActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD01A113C644A800E0DCAD /* ATActivityIndicatorView.m */; settings = {COMPILER_FLAGS = ""; }; };
@@ -1869,10 +1866,7 @@
 				F6658266104FC21300BF91E9 /* RootViewController.m in Sources */,
 				227E1B5F105191D600844235 /* ImageCache.m in Sources */,
 				227E1B64105191F000844235 /* ImageCacheObject.m in Sources */,
-				4C6788341052C74E00635F55 /* LivetickerController.m in Sources */,
 				4C42FF4F10533731002CC1E8 /* ATXMLParser.m in Sources */,
-				4C93ABBB105470020070A190 /* DetailLiveticker.m in Sources */,
-				4CC030DE1055D4340039DAB5 /* LivetickerNavigationController.m in Sources */,
 				CBC2B8D91068104200040255 /* ATMXMLUtilities.m in Sources */,
 				F6730BBA134A67040045B876 /* AsyncImageButton.m in Sources */,
 				F6730BE4134A70B40045B876 /* GCImageViewer.m in Sources */,
@@ -2053,8 +2047,6 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-licucore",
-					"-ObjC",
-					"-all_load",
 				);
 				PRODUCT_NAME = IBC;
 				PROVISIONING_PROFILE = "30D86023-56BE-4783-AF23-E174D5C50208";
@@ -2098,8 +2090,6 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-licucore",
-					"-ObjC",
-					"-all_load",
 				);
 				PRODUCT_NAME = IBC;
 				PROVISIONING_PROFILE = "";
@@ -2176,11 +2166,7 @@
 					"\"$(SRCROOT)/Classes\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-licucore",
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = ApfeltalkMagazin;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
