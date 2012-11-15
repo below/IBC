@@ -104,9 +104,9 @@
 #define SHKFormFontColorGreen		-1 // Value between 0-255, set all to -1 for default
 #define SHKFormFontColorBlue		-1 // Value between 0-255, set all to -1 for default
 
-#define SHKFormBgColorRed			-1 // Value between 0-255, set all to -1 for default
-#define SHKFormBgColorGreen			-1 // Value between 0-255, set all to -1 for default
-#define SHKFormBgColorBlue			-1 // Value between 0-255, set all to -1 for default
+#define SHKFormBgColorRed			171 / 255.0 // Value between 0-255, set all to -1 for default
+#define SHKFormBgColorGreen			9 / 255.0 // Value between 0-255, set all to -1 for default
+#define SHKFormBgColorBlue			13 / 255.0 // Value between 0-255, set all to -1 for default
 
 // iPad views
 #define SHKModalPresentationStyle	@"UIModalPresentationFormSheet" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle

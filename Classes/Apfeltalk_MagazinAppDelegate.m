@@ -31,6 +31,7 @@
 #import "NewsController.h"
 
 
+
 @implementation Apfeltalk_MagazinAppDelegate
 
 @synthesize window;

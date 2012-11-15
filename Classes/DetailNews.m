@@ -113,6 +113,7 @@
     Class composeViewControllerClass = NSClassFromString(@"SLComposeViewController");
     if (composeViewControllerClass != nil)
         [myMenu addButtonWithTitle:@"Facebook"];
+    [myMenu addButtonWithTitle:@"Google+"];
 
 
     

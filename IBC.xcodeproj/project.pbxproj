@@ -163,27 +163,9 @@
 		5E8D913F1352355700274017 /* SHKMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90D31352355700274017 /* SHKMail.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91401352355700274017 /* SHKSafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90D61352355700274017 /* SHKSafari.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91411352355700274017 /* SHKPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90D91352355700274017 /* SHKPhotoAlbum.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91421352355700274017 /* SHKDelicious.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90DD1352355700274017 /* SHKDelicious.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91431352355700274017 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5E8D90E01352355700274017 /* FBConnect.bundle */; };
-		5E8D91441352355700274017 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90E31352355700274017 /* FBConnectGlobal.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91451352355700274017 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90E51352355700274017 /* FBDialog.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91461352355700274017 /* FBFeedDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90E71352355700274017 /* FBFeedDialog.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91471352355700274017 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90E91352355700274017 /* FBLoginButton.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91481352355700274017 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90EB1352355700274017 /* FBLoginDialog.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91491352355700274017 /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90ED1352355700274017 /* FBPermissionDialog.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D914A1352355700274017 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90EF1352355700274017 /* FBRequest.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D914B1352355700274017 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90F11352355700274017 /* FBSession.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D914C1352355700274017 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90F31352355700274017 /* FBStreamDialog.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D914D1352355700274017 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90F51352355700274017 /* FBXMLHandler.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D914E1352355700274017 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90F71352355700274017 /* SHKFacebook.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D914F1352355700274017 /* SHKFBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90F91352355700274017 /* SHKFBStreamDialog.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91501352355700274017 /* SHKGoogleReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90FC1352355700274017 /* SHKGoogleReader.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91511352355700274017 /* SHKInstapaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D90FF1352355700274017 /* SHKInstapaper.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91521352355700274017 /* SHKPinboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D91021352355700274017 /* SHKPinboard.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91531352355700274017 /* SHKReadItLater.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D91051352355700274017 /* SHKReadItLater.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91541352355700274017 /* SHKTumblr.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D91081352355700274017 /* SHKTumblr.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91551352355700274017 /* SHKTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D910B1352355700274017 /* SHKTwitter.m */; settings = {COMPILER_FLAGS = ""; }; };
-		5E8D91561352355700274017 /* SHKTwitterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D910D1352355700274017 /* SHKTwitterForm.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91571352355700274017 /* SHKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D91111352355700274017 /* SHKActionSheet.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91581352355700274017 /* SHKActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D91131352355700274017 /* SHKActivityIndicator.m */; settings = {COMPILER_FLAGS = ""; }; };
 		5E8D91591352355700274017 /* SHKFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D91151352355700274017 /* SHKFormController.m */; settings = {COMPILER_FLAGS = ""; }; };
@@ -1928,26 +1910,8 @@
 				5E8D913F1352355700274017 /* SHKMail.m in Sources */,
 				5E8D91401352355700274017 /* SHKSafari.m in Sources */,
 				5E8D91411352355700274017 /* SHKPhotoAlbum.m in Sources */,
-				5E8D91421352355700274017 /* SHKDelicious.m in Sources */,
-				5E8D91441352355700274017 /* FBConnectGlobal.m in Sources */,
-				5E8D91451352355700274017 /* FBDialog.m in Sources */,
-				5E8D91461352355700274017 /* FBFeedDialog.m in Sources */,
-				5E8D91471352355700274017 /* FBLoginButton.m in Sources */,
-				5E8D91481352355700274017 /* FBLoginDialog.m in Sources */,
-				5E8D91491352355700274017 /* FBPermissionDialog.m in Sources */,
-				5E8D914A1352355700274017 /* FBRequest.m in Sources */,
-				5E8D914B1352355700274017 /* FBSession.m in Sources */,
-				5E8D914C1352355700274017 /* FBStreamDialog.m in Sources */,
-				5E8D914D1352355700274017 /* FBXMLHandler.m in Sources */,
-				5E8D914E1352355700274017 /* SHKFacebook.m in Sources */,
-				5E8D914F1352355700274017 /* SHKFBStreamDialog.m in Sources */,
 				5E8D91501352355700274017 /* SHKGoogleReader.m in Sources */,
-				5E8D91511352355700274017 /* SHKInstapaper.m in Sources */,
-				5E8D91521352355700274017 /* SHKPinboard.m in Sources */,
 				5E8D91531352355700274017 /* SHKReadItLater.m in Sources */,
-				5E8D91541352355700274017 /* SHKTumblr.m in Sources */,
-				5E8D91551352355700274017 /* SHKTwitter.m in Sources */,
-				5E8D91561352355700274017 /* SHKTwitterForm.m in Sources */,
 				5E8D91571352355700274017 /* SHKActionSheet.m in Sources */,
 				5E8D91581352355700274017 /* SHKActivityIndicator.m in Sources */,
 				5E8D91591352355700274017 /* SHKFormController.m in Sources */,
@@ -2083,11 +2047,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Classes\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-licucore",
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = IBC;
 				PROVISIONING_PROFILE = "30D86023-56BE-4783-AF23-E174D5C50208";
@@ -2125,11 +2092,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Classes\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-licucore",
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = IBC;
 				PROVISIONING_PROFILE = "";
@@ -2203,9 +2173,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Classes\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-licucore";
+				OTHER_LDFLAGS = (
+					"-licucore",
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = ApfeltalkMagazin;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
