@@ -76,7 +76,7 @@
 #define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
 // Bit.ly (for shortening URLs on Twitter) - http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key
-#define SHKBitLyLogin				@"thaddel"
+#define SHKBitLyLogin				@"ThaddelTentakel"
 #define SHKBitLyKey					@"R_ba1281dc294253d744f7e221f08496a6"
 
 // ShareMenu Ordering
