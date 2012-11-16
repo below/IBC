@@ -29,12 +29,28 @@
 #import "DetailLiveticker.h"
 #import "User.h"
 #import "NewsController.h"
-
+#import "iRate.h"
 
 @implementation Apfeltalk_MagazinAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
+
+#pragma mark Application lifecycle
+
++ (void)initialize
+{
+    //set the bundle ID. normally you wouldn't need to do this
+    //as it is picked up automatically from your Info.plist file
+    //but we want to test with an app that's actually on the store
+    [iRate sharedInstance].applicationBundleID = @"com.ibc.de";
+	[iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+    [iRate sharedInstance].daysUntilPrompt = 2; //5
+    [iRate sharedInstance].usesUntilPrompt = 15; //15
+        
+    //enable preview mode
+    [iRate sharedInstance].previewMode = NO;
+}
 
 #pragma mark - Push Notifications
 

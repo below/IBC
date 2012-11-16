@@ -10,6 +10,8 @@
 		081C73F11652D3FA00B9B670 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081C73F01652D3FA00B9B670 /* Accounts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		081C73F31652D40500B9B670 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081C73F21652D40400B9B670 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0844CD8C16307685005F5866 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0844CD8B16307685005F5866 /* Default-568h@2x.png */; };
+		08B196B11655BA7900F39E38 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08B196A71655B7D900F39E38 /* iRate.bundle */; };
+		08B196B21655BA7F00F39E38 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B196A91655B7D900F39E38 /* iRate.m */; };
 		1D3623260D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m */; settings = {COMPILER_FLAGS = ""; }; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {COMPILER_FLAGS = ""; }; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -377,6 +379,9 @@
 		081C73F21652D40400B9B670 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0828FA6B1637FFC1006A97D7 /* Glass.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glass.caf; sourceTree = "<group>"; };
 		0844CD8B16307685005F5866 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		08B196A71655B7D900F39E38 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		08B196A81655B7D900F39E38 /* iRate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		08B196A91655B7D900F39E38 /* iRate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apfeltalk_MagazinAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Apfeltalk_MagazinAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apfeltalk_MagazinAppDelegate.m; sourceTree = "<group>"; };
@@ -825,6 +830,9 @@
 		29B97314FDCFA39411CA2CEA /* Apfeltalk Magazin */ = {
 			isa = PBXGroup;
 			children = (
+				08B196A71655B7D900F39E38 /* iRate.bundle */,
+				08B196A81655B7D900F39E38 /* iRate.h */,
+				08B196A91655B7D900F39E38 /* iRate.m */,
 				5A556256148D66EB00AD6CD0 /* IBC.entitlements */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -1845,6 +1853,7 @@
 				5E97FE3F1405AD5F00DC2906 /* BoxViewController.xib in Resources */,
 				4C0E121A140A8E2A00C4DCB4 /* HTMLEntities.plist in Resources */,
 				0844CD8C16307685005F5866 /* Default-568h@2x.png in Resources */,
+				08B196B11655BA7900F39E38 /* iRate.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1947,6 +1956,7 @@
 				5EC839D2140D2CA20060F44E /* ATContactPicker.m in Sources */,
 				5EC839D5140D345D0060F44E /* ATContactPickerList.m in Sources */,
 				5E54C8E7140E3D08007C1098 /* DetailMessageViewController.m in Sources */,
+				08B196B21655BA7F00F39E38 /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

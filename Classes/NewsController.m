@@ -38,10 +38,13 @@
 
 const int SAVED_MESSAGES_SECTION_INDEX = 1;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	savedStories = [[NSKeyedUnarchiver unarchiveObjectWithFile:[self savedStoryFilepath]] mutableCopy];
+    
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
