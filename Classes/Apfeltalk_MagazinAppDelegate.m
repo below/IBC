@@ -29,28 +29,12 @@
 #import "DetailLiveticker.h"
 #import "User.h"
 #import "NewsController.h"
-#import "iRate.h"
+
 
 @implementation Apfeltalk_MagazinAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
-
-#pragma mark Application lifecycle
-
-+ (void)initialize
-{
-    //set the bundle ID. normally you wouldn't need to do this
-    //as it is picked up automatically from your Info.plist file
-    //but we want to test with an app that's actually on the store
-    [iRate sharedInstance].applicationBundleID = @"com.ibc.de";
-	[iRate sharedInstance].onlyPromptIfLatestVersion = NO;
-    [iRate sharedInstance].daysUntilPrompt = 2; //5
-    [iRate sharedInstance].usesUntilPrompt = 15; //15
-        
-    //enable preview mode
-    [iRate sharedInstance].previewMode = NO;
-}
 
 #pragma mark - Push Notifications
 
@@ -76,23 +60,12 @@
         [theString appendFormat:@"%2.2x", theBytes[i]];
     }
     
-    NSString *url = nil;
-    if ([[UIApplication sharedApplication] enabledRemoteNotificationTypes] > 0) {
-        url = [NSString stringWithFormat:@"http://byte-welt.net:8080/PushServer/client/register?devicetype=4&appkey=23e409isaeroakse23sae0&deviceid=%@&devicekey=%@",theString,theString];
-        NSLog(@"push enabled");
-    }
-    else {
-        url = [NSString stringWithFormat:@"http://byte-welt.net:8080/PushServer/client/unregister?devicetype=4&appkey=23e409isaeroakse23sae0&deviceid=%@&devicekey=%@",theString,theString];
-        NSLog(@"push disabled");
-    }
-    
+    NSString* url = [NSString stringWithFormat:@"http://byte-welt.net:8080/PushServer/client/register?devicetype=4&appkey=23e409isaeroakse23sae0&deviceid=%@&devicekey=%@",theString,theString];
     NSLog(@"APNS URL : %@",url);
     
     NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)urlResponse;
-        NSLog(@"StatusCode: %d",httpResponse.statusCode);
         if (error) {
             NSLog(@"Error: %@", error);
         }
@@ -157,7 +130,6 @@
     
     //This is the start of the general push notification settings
 	// Let the device know we want to receive push notifications
-    NSLog(@"notificationtypes: %d",[[UIApplication sharedApplication] enabledRemoteNotificationTypes]);
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
